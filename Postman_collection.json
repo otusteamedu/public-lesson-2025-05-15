@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "5d9d2f23-b92d-459d-ad36-0296799643f7",
+		"name": "Public lesson 2025-05-15",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30057528"
+	},
+	"item": [
+		{
+			"name": "Get static translation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7777/api/v1/ru/translate?message=Hello, world",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"ru",
+						"translate"
+					],
+					"query": [
+						{
+							"key": "message",
+							"value": "Hello, world"
+						},
+						{
+							"key": "name",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "gender",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "mushrooms",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create translatable message",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Some message\",\r\n    \"locale\": \"en_US\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7777/api/v1/create-message",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"create-message"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get translatable message",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7777/api/v1/get-message/6?locale=de&fallback=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"get-message",
+						"6"
+					],
+					"query": [
+						{
+							"key": "locale",
+							"value": "de"
+						},
+						{
+							"key": "fallback",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add translation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"New message\",\r\n    \"locale\": \"en_US\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:7777/api/v1/update-translatable-message/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7777",
+					"path": [
+						"api",
+						"v1",
+						"update-translatable-message",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

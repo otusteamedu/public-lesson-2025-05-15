@@ -1,0 +1,15 @@
+Hello: Привет, {name}
+Gender: >-
+  {gender, select,
+    female   {{name} нашла грибы}
+    male     {{name} нашёл грибы}
+    multiple {{name} нашли грибы}
+    other    {{name} нашло грибы}
+  }
+Number: >-
+  {mushrooms, plural,
+    one    {{name} видит # гриб}
+    few    {{name} видит # гриба}
+    many   {{name} видит # грибов}
+    other  {{name} видит # грибов}
+  }
